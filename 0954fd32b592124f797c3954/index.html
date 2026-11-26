@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LocShare OTA Installer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body { font-family: -apple-system, sans-serif; text-align: center; padding: 40px 20px; background: #f5f5f7; }
+    .card { background: #fff; max-width: 400px; margin: 0 auto; padding: 30px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .btn { display: inline-block; background: #007aff; color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 12px; font-weight: 600; font-size: 17px; margin: 20px 0; }
+    #qrcode { display: flex; justify-content: center; margin-top: 20px; }
+    .meta { color: #666; font-size: 13px; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>LocShare (Build #11)</h2>
+    <a class="btn" href="itms-services://?action=download-manifest&url=https://questionernst-hue.github.io/locshare-ota-dist/0954fd32b592124f797c3954/manifest.plist">アプリをインストール</a>
+    <div id="qrcode"></div>
+    <p class="meta">別のiPhoneでカメラを起動し、上のQRコードを読み取ると直接インストールできます。</p>
+  </div>
+  <script>
+    new QRCode(document.getElementById("qrcode"), { text: window.location.href, width: 180, height: 180 });
+  </script>
+</body>
+</html>
